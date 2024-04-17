@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+</head>
+<style>
+    body {
+        background-image: url('backgrd.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        width: 300px;
+    }
+
+    .form-horizontal {
+        background-color: rgba(181, 207, 184, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        text-align: right;
+    }
+
+    .inputGroupContainer {
+        margin-right: 0;
+    }
+</style>
+<body>
+
+<div class="container">
+    <form class="well form-horizontal" action="submit_login.html" method="post" id="login_form">
+        <fieldset>
+            <legend><center><h2><b>Login Page</b></h2></center></legend>
+
+            <div class="form-group">
+                <label class="col-md-12 control-label">Email Address</label>  
+                <div class="col-md-12 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="email" placeholder="Email Address" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-12 control-label">Password</label> 
+                <div class="col-md-12 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input name="password" placeholder="Password" class="form-control" type="password">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-warning btn-block">LOGIN <span class="glyphicon glyphicon-log-in"></span></button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <a href="signup.html" class="btn btn-primary btn-block">Sign Up Page</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#login_form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please enter your Email Address'
+                        },
+                        emailAddress: {
+                            message: 'Please enter a valid Email Address'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please enter your Password'
+                        }
+                    }
+                }
+            }
+        })
+        .on('success.form.bv', function(e) {
+            // Redirect to another page upon successful form submission
+            window.location.href = "submit_login.html";
+            e.preventDefault(); // Prevent the default form submission
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/3903c9d7fd.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Player Shopping Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #009688;
+    margin-bottom: 20px;
+}
+
+.left,
+.center,
+.right {
+    flex: 1;
+}
+
+.my-amount,
+.total_buy {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.find-athlete {
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+
+        .player-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .player {
+            width: calc(25% - 20px);
+            background-color: #0c0505;
+            border-radius: 10px;
+            color: white;
+            height: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .player:hover {
+            transform: translateY(-5px);
+        }
+
+        .player img {
+            width: 100%;
+            height: 200px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .player-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .player-info h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .player-info p {
+            margin: 0;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .button-container button {
+            width: 45%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buy-button {
+            background-color: #009688;
+            color: #fff;
+        }
+
+        .sold-button {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .icon {
+            width: 80px;
+            height: 50px;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+        }
+
+        .collection-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .collection-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .collection-item h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .collection-item p {
+            margin: 0;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .Team {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Team img {
+            width: 100px;
+            height: auto;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+  
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="submit_page.html">
+                <img src="logo.jpg" class="icon" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="index.html">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="collection.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  btn btn-primary" href="quiz.html">Quiz</a>
+                    </li>
+                    <!-- Replaced the third link with a button -->
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="payment.html">PAY</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<div class="Team">
+    <img src="CSK.png" alt="">
+    <img src="MI.png" alt="">
+    <img src="RR.png" alt="">
+    <img src="RCB.png" alt="">
+    <img src="LSG.png" alt="">
+    <img src="GT.png" alt="">
+    <img src="SRH.png" alt="">
+    <img src="DC.png" alt="">
+    <img src="PBK.png" alt="">
+    <img src="KKR.png" alt="">
+</div>
+
+<div class="container">
+    <div class="header">
+        <div class="left">
+            <div class="my-amount">
+                Amount: $<span id="remainingAmount">1000</span>
+            </div>
+        </div>
+        <div class="center">
+            <h1 class="find-athlete">Find Your Athlete</h1>
+        </div>
+        <div class="right">
+            <div class="total_buy">Total Buy: <span id="totalBuyCount">0</span></div>
+        </div>
+    </div>
+    
+    <div class="player-container">
+        <!-- Your player content -->
+
+
+       
+                <div class="player">
+                    <img src="rohit.png" alt="Player 1">
+                    <div class="player-info">
+                        <h3>Rohit</h3>
+                        <p class="price">$70</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <img src="virat.png" alt="Player 2">
+                    <div class="player-info">
+                        <h3>Virat</h3>
+                        <p class="price">$70</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <img src="dhoni.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>Dhoni</h3>
+                        <p class="price">$60</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <img src="maxwell.png" alt="Player 4">
+                    <div class="player-info">
+                        <h3>Maxwell</h3>
+                        <p class="price">$50</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="player">
+                    <img src="bumrah.png" alt="Player 5">
+                    <div class="player-info">
+                        <h3>Bumrah</h3>
+                        <p class="price">$90</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="player">
+                    <img src="Pandey.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>Pandey</h3>
+                        <p class="price">$60</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div><div class="player">
+                    <img src="Narine.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>Narine</h3>
+                        <p class="price">$60</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div><div class="player">
+                    <img src="RutuRaj.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>RutuRaj</h3>
+                        <p class="price">$40</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="player">
+                    <img src="Warner.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>Warner</h3>
+                        <p class="price">$60</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div><div class="player">
+                    <img src="SKY.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>SKY</h3>
+                        <p class="price">$70</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div><div class="player">
+                    <img src="Pant.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>Pant</h3>
+                        <p class="price">$60</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div><div class="player">
+                    <img src="Hardik.png" alt="Player 3">
+                    <div class="player-info">
+                        <h3>Hardik</h3>
+                        <p class="price">$10</p>
+                        <div class="button-container">
+                            <button class="buy-button" onclick="buyPlayer(this)">Buy</button>
+                            <button class="sold-button disabled" onclick="sellPlayer(this)" disabled>Sold</button>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        <div class="container" id="collectionPage" style="display: none;">
+            <h1>Collection</h1>
+            <div id="collectionItems"></div>
+            <button onclick="clearCollection()">Clear Collection</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<div class="container" id="collectionPage" style="display: none;">
+    <h1>Collection</h1>
+    <div id="collectionItems"></div>
+    <button onclick="clearCollection()">Clear Collection</button>
+</div>
+
+<script>
+    let totalBuyCount = 0;
+
+    function buyPlayer(button) {
+        const playerName = button.parentNode.parentNode.querySelector('h3').textContent;
+        const playerPrice = button.parentNode.parentNode.querySelector('.price').textContent;
+        button.disabled = true;
+        button.classList.add('disabled');
+        const soldButton = button.nextElementSibling;
+        soldButton.disabled = false;
+        soldButton.classList.remove('disabled');
+        
+        let collection = JSON.parse(localStorage.getItem('collection')) || [];
+        collection.push({ name: playerName, price: playerPrice });
+        localStorage.setItem('collection', JSON.stringify(collection));
+        
+        const remainingAmountElement = document.getElementById('remainingAmount');
+        let remainingAmount = parseFloat(remainingAmountElement.textContent);
+        remainingAmount -= parseFloat(playerPrice.replace('$', ''));
+        remainingAmountElement.textContent = remainingAmount.toFixed(2);
+
+        totalBuyCount++;
+        document.getElementById('totalBuyCount').textContent = totalBuyCount;
+    }
+
+    function sellPlayer(button) {
+        const playerName = button.parentNode.parentNode.querySelector('h3').textContent;
+        const collection = JSON.parse(localStorage.getItem('collection')) || [];
+        const index = collection.findIndex(item => item.name === playerName);
+        if (index !== -1) {
+            collection.splice(index, 1);
+            localStorage.setItem('collection', JSON.stringify(collection));
+            updateCollectionPage();
+        }
+        button.disabled = true;
+        button.classList.add('disabled');
+        
+        totalBuyCount--;
+        document.getElementById('totalBuyCount').textContent = totalBuyCount;
+    }
+
+    function toggleInfo() {
+        const collectionPage = document.getElementById('collectionPage');
+        collectionPage.style.display = collectionPage.style.display === 'none' ? 'block' : 'none';
+        if (collectionPage.style.display === 'block') {
+            updateCollectionPage();
+        }
+    }
+
+    function updateCollectionPage() {
+        const collection = JSON.parse(localStorage.getItem('collection')) || [];
+        const collectionItems = document.getElementById('collectionItems');
+        collectionItems.innerHTML = '';
+        collection.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('collection-item');
+            itemElement.innerHTML = `<h3>${item.name}</h3><p class="price">${item.price}</p>`;
+            collectionItems.appendChild(itemElement);
+        });
+    }
+
+    function clearCollection() {
+        localStorage.removeItem('collection');
+        updateCollectionPage();
+    }
+</script>
+</body>
+</html>
