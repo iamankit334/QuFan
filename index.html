@@ -64,6 +64,8 @@
             animation: gradbar 15s ease infinite;
         }
 
+        
+
         /* NAVIGATION */
         .navbar {
             display: grid;
@@ -431,6 +433,35 @@
     transition: 0.6s;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    
+}
+
+.button {
+background-color: yellowgreen;  
+  color:black;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    
+    border-radius: 5px;
+    margin-left: 40px;
+    cursor: pointer;
+    box-shadow: 3px 2px 5px rgb(250, 248, 127); /* Shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effect */
+}
+
+.button:hover {
+    transform: translateY(-2px); /* 3D effect on hover */
+    text-transform: uppercase;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+
     </style>
 </head>
 <body>
@@ -488,10 +519,11 @@
 
 
 
-<div class="logo-container">
-    <img src="login.png" alt="Login" onclick="window.location.href='login.html';">
-    <img src="Sign-Up.png" alt="Signup" onclick="window.location.href='signup.html';">
+<div class="button-container">
+    <button class="button" onclick="window.location.href='login.html';">Login</button>
+    <button class="button" onclick="window.location.href='signup.html';">Sign Up</button>
 </div>
+
 
 
 
